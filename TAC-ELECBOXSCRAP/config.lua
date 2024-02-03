@@ -1,19 +1,19 @@
 Config = {
     isTarget = true,
 
-    ghxstyErr = "You already scraped the electical box.",
-    ghxstyStop = "You stopped scraped the electical box.",
-    ghxstySearching = "scraping the electical box...",
+    Err = "You already scraped the electical box.",
+    Stop = "You stopped scraped the electical box.",
+    Searching = "scraping the electical box...",
 
-    timeLooking = 2, -- jake you can change this depending how long you want it to take or you can math.random( [m][, n] ) it for random time
+    timeLooking = 2, -- you can change this depending how long you want it to take or you can math.random( [m][, n] ) it for random time
 
     addonItemsActive = true, -- if this is true it will activate an additional item given to player
 
-    itemTable = { -- jake add normal items here
+    itemTable = { -- add normal items here
         [1] = {item = 'rubber', amount = math.random(1,5)},
     },
 
-    addonItemsTable = { -- these are the additional items
+    addonItemsTable = { -- these are the additional items if wanted
         [1] = {item = 'rubber', amount = math.random(1,5)},
     },
 
