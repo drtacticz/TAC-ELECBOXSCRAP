@@ -10,7 +10,7 @@ CreateThread(function()
                 {
                     type = "client",
                     icon = Config.icons.baseIcon,
-                    event = "srp-elecboxscrap:client:lookattarget",
+                    event = "tac-elecboxscrap:client:lookattarget",
                     label = "Scrap Electrical Box",
                     targeticon = Config.icons.lookAt,
                 }
@@ -20,7 +20,7 @@ CreateThread(function()
     end
 end)
 
-RegisterNetEvent('srp-elecboxscrap:client:lookattarget', function()
+RegisterNetEvent('tac-elecboxscrap:client:lookattarget', function()
     local player = PlayerPedId()
     local position = GetEntityCoords(player)
     local plyCanSearch = true
@@ -44,7 +44,7 @@ RegisterNetEvent('srp-elecboxscrap:client:lookattarget', function()
                 QBCore.Functions.Notify(Config.ghxstyErr, 'error', 3000)
             else
                 plyCanSearch = false
-                QBCore.Functions.Progressbar('scraping_electrical_box', Config.ghxstySearching, (Config.timeLooking * 1000), false, true, {
+                QBCore.Functions.Progressbar('scraping_electrical_box', Config.Searching, (Config.timeLooking * 1000), false, true, {
                     disableMovement = true,
                     disableCarMovement = true,
                     disableMouse = false,
@@ -53,7 +53,7 @@ RegisterNetEvent('srp-elecboxscrap:client:lookattarget', function()
                     animDict = "amb@prop_human_bum_bin@base",
                     anim = 'base'
                 }, {}, {}, function()
-                    TriggerServerEvent('sr-elecboxscrap:server:getThaLootyJake', carrot)
+                    TriggerServerEvent('tac-elecboxscrap:server:getThaLooty', carrot)
                     plyCanSearch = true
                     table.insert(searchCheck, carrot)
                     ClearPedTasks(player)
@@ -67,7 +67,7 @@ RegisterNetEvent('srp-elecboxscrap:client:lookattarget', function()
     end
 end)
 
-RegisterNetEvent('sr-elecboxscrap:client:rDump', function(obj)
+RegisterNetEvent('tac-elecboxscrap:client:rDump', function(obj)
     for i = 1, #searchCheck do
         if searchCheck[i] == obj then
             table.remove(searchCheck, i)
