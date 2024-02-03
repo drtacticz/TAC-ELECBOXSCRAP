@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 
-description 'srp-elecboxscrap'
+description 'tac-elecboxscrap'
 version '1.0.0'
 
 client_scripts {
